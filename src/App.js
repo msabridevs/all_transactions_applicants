@@ -39,40 +39,42 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 flex items-center justify-center p-6">
       <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-xl w-full text-center">
-        <h1 className="text-3xl font-bold text-blue-700 mb-6">الاستعلام عن طلب الأحوال المدنية</h1>
+        <h1 className="text-[24px] font-bold text-blue-700 mb-6">
+          الاستعلام عن طلب الأحوال المدنية
+        </h1>
 
         <input
           type="text"
           value={number}
           onChange={(e) => setNumber(e.target.value)}
           placeholder="أدخل رقم الطلب"
-          className="text-center text-xl p-3 w-full border border-gray-300 rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="text-center text-[24px] p-4 w-full border border-gray-300 rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <button
           onClick={handleCheck}
           disabled={loading}
-          className="bg-blue-600 hover:bg-blue-700 text-white text-xl font-semibold py-2 px-6 rounded-xl transition duration-300 mb-6 w-full"
+          className="bg-blue-600 hover:bg-blue-700 text-white text-[24px] font-semibold py-3 px-6 rounded-xl transition duration-300 mb-6 w-full"
         >
           {loading ? 'جارٍ التحميل...' : 'تحقق من الحالة'}
         </button>
 
         {/* Results directly below the input */}
-        <div className="space-y-4 mt-2 text-right" style={{ direction: 'rtl' }}>
+        <div className="space-y-4 mt-2 text-left">
           {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 p-4 rounded-xl text-[20px] font-medium">
+            <div className="bg-red-100 border border-red-400 text-red-700 p-4 rounded-xl text-[24px] font-medium">
               {error}
             </div>
           )}
 
           {status && (
-            <div className="bg-green-100 border border-green-400 text-green-800 p-4 rounded-xl text-[20px] leading-relaxed">
+            <div className="bg-green-100 border border-green-400 text-green-800 p-4 rounded-xl text-[24px] leading-relaxed">
               <strong>الحالة:</strong> {status}
             </div>
           )}
 
           {notes && (
-            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-4 rounded-xl text-[20px] leading-relaxed">
+            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-4 rounded-xl text-[24px] leading-relaxed">
               <strong>ملاحظات:</strong> {notes}
             </div>
           )}
