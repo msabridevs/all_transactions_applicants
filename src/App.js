@@ -29,7 +29,7 @@ function App() {
     setLoading(false);
 
     if (error || !data) {
-      setError('لم يتم العثور على الطلب. رجاء التأكد من الرقم المدخل');
+      setError('❌ لم يتم العثور على الطلب. رجاء التأكد من الرقم المدخل');
     } else {
       setStatus(data.status);
       setNotes(data.notes);
@@ -57,20 +57,26 @@ function App() {
           {loading ? 'جارٍ التحميل...' : 'تحقق من الحالة'}
         </button>
 
-        {error && (
-          <div className="text-red-600 text-lg font-medium">{error}</div>
-        )}
+        {/* Results directly below the input */}
+        <div className="space-y-4 mt-2 text-right" style={{ direction: 'rtl' }}>
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 p-4 rounded-xl text-[20px] font-medium">
+              {error}
+            </div>
+          )}
 
-        {status && (
-          <div className="mt-6 space-y-4 text-right" dir="rtl">
-            <div className="bg-green-100 border border-green-400 text-green-800 p-4 rounded-xl text-2xl leading-relaxed">
+          {status && (
+            <div className="bg-green-100 border border-green-400 text-green-800 p-4 rounded-xl text-[20px] leading-relaxed">
               <strong>الحالة:</strong> {status}
             </div>
-            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-4 rounded-xl text-2xl leading-relaxed">
+          )}
+
+          {notes && (
+            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-4 rounded-xl text-[20px] leading-relaxed">
               <strong>ملاحظات:</strong> {notes}
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
