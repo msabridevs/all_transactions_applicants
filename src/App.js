@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
-// ✅ Supabase credentials
+// ✅ Supabase config
 const supabase = createClient(
   'https://esbgozuigjdavcxiaxon.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzYmdvenVpZ2pkYXZjeGlheG9uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyMjU4NzUsImV4cCI6MjA1OTgwMTg3NX0.OiOH_0ZcTUPu6oMGILsq5oqm1FdCDBvzcHozs-4DNY0'
@@ -38,8 +38,8 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 flex items-center justify-center p-6">
-      <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-3xl w-full text-center">
-        <h1 className="text-[36px] font-bold text-blue-700 mb-10 leading-loose">
+      <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-5xl w-full text-center">
+        <h1 className="text-[40px] font-bold text-blue-700 mb-12 leading-relaxed">
           الاستعلام عن طلب معاملة قنصلية (قيد فردى - قيد عائلى - قيد زواج - قيد طلاق - شهادة - الجنسية - الإذن بالتجنس مع الاحتفاظ بالجنسية المصرية - الإذن بالتجنس مع عدم الاحتفاظ بالجنسية المصرية)
         </h1>
 
@@ -48,32 +48,32 @@ function App() {
           value={number}
           onChange={(e) => setNumber(e.target.value)}
           placeholder="أدخل رقم الطلب"
-          className="text-center text-[32px] p-6 w-full border border-gray-300 rounded-xl mb-6 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          className="text-center text-[36px] p-6 w-full border border-gray-400 rounded-2xl mb-8 focus:outline-none focus:ring-4 focus:ring-blue-500"
         />
 
         <button
           onClick={handleCheck}
           disabled={loading}
-          className="bg-blue-600 hover:bg-blue-700 text-white text-[32px] font-bold py-5 px-10 rounded-xl transition duration-300 mb-8 w-full"
+          className="bg-blue-700 hover:bg-blue-800 text-white text-[36px] font-bold py-6 px-10 rounded-2xl transition duration-300 mb-10 w-full"
         >
           {loading ? 'جارٍ التحميل...' : 'تحقق من الحالة'}
         </button>
 
-        <div className="space-y-6 mt-4 text-right" dir="rtl">
+        <div className="space-y-8 mt-4 text-center">
           {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 p-6 rounded-xl text-[32px] font-bold">
+            <div className="bg-red-100 border border-red-400 text-red-700 p-6 rounded-2xl text-[36px] font-bold">
               {error}
             </div>
           )}
 
           {status && (
-            <div className="bg-green-100 border border-green-400 text-green-800 p-6 rounded-xl text-[32px] leading-relaxed">
+            <div className="bg-green-100 border border-green-400 text-green-800 p-6 rounded-2xl text-[36px] leading-loose">
               <strong>الحالة:</strong> {status}
             </div>
           )}
 
           {notes && (
-            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-6 rounded-xl text-[32px] leading-relaxed">
+            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-6 rounded-2xl text-[36px] leading-loose">
               <strong>ملاحظات:</strong> {notes}
             </div>
           )}
