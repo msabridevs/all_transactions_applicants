@@ -40,7 +40,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 flex items-center justify-center p-6">
       <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-xl w-full text-center">
         <h1 className="text-[24px] font-bold text-blue-700 mb-6">
-          الاستعلام عن طلب الأحوال المدنية
+          الاستعلام عن طلب معاملة قنصلية (قيد ميلاد - بطاقة الرقم القومى - صحيفة الحالة الجنائية - قيد فردى - قيد عائلى - قيد زواج - قيد طلاق - شهادة وفاة - إفادة - إصدار جواز سفر لأول مرة - تجديد جواز سفر - بحث الجنسية - إسترداد الجنسية - الإذن بالتجنس مع الاحتفاظ بالجنسية المصرية - الإذن بالتجنس مع عدم الاحتفاظ بالجنسية المصرية)
         </h1>
 
         <input
