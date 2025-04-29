@@ -18,6 +18,7 @@ function App() {
   const handleCheck = async () => {
     setStatus('');
     setNotes('');
+    setTransaction('');
     setError('');
     setLoading(true);
 
@@ -34,6 +35,7 @@ function App() {
     } else {
       setStatus(data.status);
       setNotes(data.notes);
+      setTransaction(data.transaction);
     }
   };
 
@@ -41,7 +43,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 flex items-center justify-center p-6">
       <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-5xl w-full text-center">
         <h1 className="text-[40px] font-bold text-blue-700 mb-12 leading-relaxed">
-          الاستعلام عن طلب معاملة قنصلية (قيد ميلاد - بطاقة الرقم القومى - صحيفة الحالة الجنائية - قيد فردى - قيد عائلى - قيد زواج - قيد طلاق - شهادة وفاة - إفادة - إصدار جواز سفر لأول مرة - تجديد جواز سفر - بحث الجنسية  - إسترداد الجنسية - الإذن بالتجنس مع الاحتفاظ بالجنسية المصرية - الإذن بالتجنس مع عدم الاحتفاظ بالجنسية المصرية)
+          الاستعلام عن طلب معاملة قنصلية (قيد ميلاد - بطاقة الرقم القومى - صحيفة الحالة الجنائية - قيد فردى - قيد عائلى - قيد زواج - قيد طلاق - شهادة وفاة - إفادة - إصدار جواز سفر لأول مرة - تجديد جواز سفر - بحث الجنسية - إسترداد الجنسية - الإذن بالتجنس مع الاحتفاظ بالجنسية المصرية - الإذن بالتجنس مع عدم الاحتفاظ بالجنسية المصرية)
         </h1>
 
         <input
@@ -78,8 +80,9 @@ function App() {
               <strong>ملاحظات:</strong> {notes}
             </div>
           )}
-	  {transaction && (
-  <div className="bg-blue-100 border border-blue-400 text-blue-800 p-6 rounded-2xl text-[36px] leading-loose">
+
+          {transaction && (
+            <div className="bg-blue-100 border border-blue-400 text-blue-800 p-6 rounded-2xl text-[36px] leading-loose">
               <strong>نوع المعاملة:</strong> {transaction}
             </div>
           )}
