@@ -22,7 +22,7 @@ function App() {
 
     const { data, error } = await supabase
       .from('civil_status')
-      .select('status, notes')
+      .select('status, notes, transaction')
       .eq('number', number.trim())
       .single();
 
@@ -75,6 +75,11 @@ function App() {
           {notes && (
             <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 p-6 rounded-2xl text-[36px] leading-loose">
               <strong>ملاحظات:</strong> {notes}
+            </div>
+          )}
+	  {transaction && (
+  <div className="bg-blue-100 border border-blue-400 text-blue-800 p-6 rounded-2xl text-[36px] leading-loose">
+              <strong>نوع المعاملة:</strong> {transaction}
             </div>
           )}
         </div>
