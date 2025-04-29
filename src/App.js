@@ -11,6 +11,7 @@ function App() {
   const [number, setNumber] = useState('');
   const [status, setStatus] = useState('');
   const [notes, setNotes] = useState('');
+  const [transaction, setTransaction] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
